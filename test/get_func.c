@@ -1,12 +1,20 @@
 #include "main.h"
 
-int get_func(char spec, va_list args)
+/**
+ * get_func -  this function point to a function based of its specifier
+ * @spec: the specifer
+ *
+ * Return: function pointer that points to the specifier's funcion
+ */
+
+int (*get_func(char spec))(va_list)
 {
 	int i;
 
 	prints spec_func[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"%", percent},
 		{NULL, NULL}
 	};
 
@@ -14,11 +22,8 @@ int get_func(char spec, va_list args)
 	{
 		if (spec_func[i].p[0] == spec)
 		{
-			printf("%s", 
-			int (*print_func)(va_list) = spec_func[i].print;
-			print_func(args);
+			return (spec_func[i].print);
 		}
-		break;
 	}
 	return (0);
 }

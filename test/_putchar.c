@@ -2,12 +2,12 @@
 
 /**
  * _putchar - print character
- * @char: the character to be printed
+ * @c: the character to be printed
  *
  * Return: the character
  */
 
-int _putchar(int c)
+int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }

@@ -14,6 +14,7 @@ int print_c(va_list args)
 	int i;
 
 	i = va_arg(args, int);
+	printf("dd");
 	_putchar(i);
 	return (1);
 }
@@ -35,5 +36,20 @@ int print_s(va_list args)
 		_putchar(str[l]);
 	}
 
-	return (l);
+	return (l + 1);
+}
+
+/**
+ * percent - print %
+ * @args: variadic function
+ *
+ * Return: total number of Characters Printed
+ */
+int percent(va_list args)
+{
+	(void) args;
+
+	_putchar('%');
+
+	return (1);
 }

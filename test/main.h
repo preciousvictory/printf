@@ -7,12 +7,12 @@
 
 int _printf(const char *format, ...);
 
-int _putchar(int c);
+int _putchar(char c);
 
 /**
  * struct func - a struct to the function to printed
  * @p: the format specifier
- * @f: the fuction for the specifier
+ * @print: the fuction for the specifier
  */
 typedef struct func
 {
@@ -20,10 +20,11 @@ typedef struct func
 	int (*print)(va_list str);
 } prints;
 
-int get_func(char spec, va_list args);
+int (*get_func(char spec))(va_list);
 
 /* All the format specifiers function */
 int print_c(va_list args);
 int print_s(va_list args);
+int percent(va_list args);
 
 #endif /* MAIN_H */

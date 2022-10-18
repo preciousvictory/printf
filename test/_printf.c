@@ -1,6 +1,6 @@
 #include "main.h"
 
-int get_func(char spec, va_list args);
+int (*get_func(char spec))(va_list);
 
 
 /**
@@ -8,30 +8,33 @@ int get_func(char spec, va_list args);
  * @format: is a character string
  *
  * write output to stdout, the standard output stream
- * Returns: the number of characters printed (excluding the null byte used to
+ * Return: the number of characters printed (excluding the null byte used to
  * end output to strings)
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, len = 0;
+	int i, count = 0;
 	char str;
+	int (*p_func)(va_list);
 
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%' && format[i + 1] != ' ')
+		if (format[i] == '%')
 		{
+			i++;
 			str = format[i];
-			printf("%c---", str);
-			len += get_func(str, args);
+			p_func = get_func(str);
+			count += p_func(args);
 		}
 		else
-		{	
+		{
 			_putchar(format[i]);
+			count++;
 		}
 	}
 
 	va_end(args);
-	return (len);
+	return (count);
 }
