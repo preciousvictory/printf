@@ -10,7 +10,20 @@
 
 int print_num(unsigned int num, int count)
 {
-	print_num((num / 10), ++count);
+/*	if (num < 0)
+	{
+		_num = -num;
+		_putchar('-');
+	}
+	else
+	{
+		_num = num;
+	} */
+
+	if (num >= 10)
+	{
+ 		print_num((num / 10), count + 1);
+	}
 
 	_putchar('0' + (num % 10));
 	return (count);
