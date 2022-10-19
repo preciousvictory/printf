@@ -14,7 +14,6 @@ int print_c(va_list args)
 	int i;
 
 	i = va_arg(args, int);
-	printf("dd");
 	_putchar(i);
 
 	return (1);
