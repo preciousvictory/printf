@@ -1,8 +1,5 @@
 #include "main.h"
 
-int (*get_func(char spec))(va_list);
-
-
 /**
  * _printf - a function that produces output according to a format.
  * @format: is a character string

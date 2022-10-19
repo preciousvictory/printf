@@ -4,6 +4,7 @@
  * print_num - recursive function that prints the remainder of number
  * @num: the number
  * @count: counting the number of characters to be printed
+ * @base: the base
  *
  * Return: total numbers of characters
  */

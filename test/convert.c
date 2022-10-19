@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * convert - convert a number baed of it's base
+ * @num: the number
+ * @base: the base
+ * @_case: 1 (to print lowercase) 0 ( to print uppercase)
+ *
+ * Return: converted string)
+ */
 char *convert(unsigned int num, int base, int _case)
 {
 	char *str;
