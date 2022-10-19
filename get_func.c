@@ -16,12 +16,6 @@ int (*get_func(char spec))(va_list)
 		{"s", print_s},
 		{"%", percent},
 		{"d", print_i},
-		{"i", print_i},
-		{"u", print_u},
-		{"o", print_o},
-		{"x", print_x},
-		{"X", print_X},
-		{"S", print_S},
 		{NULL, NULL}
 	};
 
