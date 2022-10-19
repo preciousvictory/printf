@@ -9,6 +9,7 @@
 int _printf(const char *format, ...);
 
 int _putchar(char c);
+int _puts(char *str);
 
 /**
  * struct func - a struct to the function to printed
@@ -28,8 +29,15 @@ int print_c(va_list args);
 int print_s(va_list args);
 int percent(va_list args);
 int print_i(va_list args);
+int print_u(va_list args);
+int print_o(va_list args);
+int print_x(va_list args);
+int print_X(va_list args);
+int print_S(va_list args);
 
 
-int print_num(unsigned int num, int count);
 
+int print_num(unsigned int num, int base, int count);
+
+char *convert(unsigned int num, int base, int _case);
 #endif /* MAIN_H */

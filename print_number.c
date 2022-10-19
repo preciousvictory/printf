@@ -8,31 +8,21 @@
  * Return: total numbers of characters
  */
 
-int print_num(unsigned int num, int count)
+int print_num(unsigned int num, int base, int count)
 {
-/*	if (num < 0)
-	{
-		_num = -num;
-		_putchar('-');
-	}
-	else
-	{
-		_num = num;
-	} */
-
 	if (num >= 10)
 	{
- 		print_num((num / 10), count + 1);
+ 		print_num((num / base), 10, count + 1);
 	}
 
-	_putchar('0' + (num % 10));
+	_putchar('0' + (num % base));
 	return (count);
 }
 
 
 /**
  * print_i - print integers
- * @args; variadic function
+ * @args: variadic function
  *
  * NB: There is no difference between the %i & %d format specifiers for printf
  * Return: total number of Characters Printed
@@ -54,7 +44,7 @@ int print_i(va_list args)
 	{
 		_num = num;
 	}
-	c = print_num(_num, 1);
+	c = print_num(_num, 10, 1);
 
 	return (c);
 }
